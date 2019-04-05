@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.request.target.Target;
@@ -310,11 +309,7 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
         trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
         player = ExoPlayerFactory.newSimpleInstance(context, renderersFactory, trackSelector, drmSessionManager);
         uzVideo.getUzPlayerView().setPlayer(player);
-
         uzVideo.getUzPlayerView().setShutterBackgroundColor(Color.TRANSPARENT);
-        uzVideo.getUzPlayerView().setKeepContentOnPlayerReset(false);
-        uzVideo.getUzPlayerView().setVisibility(View.VISIBLE);
-
         MediaSource mediaSourceVideo = createMediaSourceVideo();
         //merge title to media source video
         //SUBTITLE
