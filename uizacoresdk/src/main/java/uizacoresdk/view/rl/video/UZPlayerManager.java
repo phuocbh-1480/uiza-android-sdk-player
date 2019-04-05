@@ -77,6 +77,7 @@ import vn.uiza.core.utilities.LLog;
 import vn.uiza.core.utilities.LUIUtil;
 import vn.uiza.restapi.uiza.model.v2.listallentity.Subtitle;
 import vn.uiza.views.autosize.UZImageButton;
+import android.util.Log;
 
 /**
  * Manages the {@link ExoPlayer}, the IMA plugin and all video playback.
@@ -502,6 +503,7 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
 
     private MediaSource buildMediaSource(Uri uri) {
         @ContentType int type = Util.inferContentType(uri);
+        Log.d("UIZA", type + "===========")
         switch (type) {
             case C.TYPE_DASH:
                 return new DashMediaSource.Factory(new DefaultDashChunkSource.Factory(mediaDataSourceFactory), manifestDataSourceFactory).createMediaSource(uri);
