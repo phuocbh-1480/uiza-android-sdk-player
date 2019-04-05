@@ -1,6 +1,7 @@
 package uizacoresdk.view.rl.video;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
 import android.widget.ImageView;
@@ -307,6 +308,7 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
         trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
         player = ExoPlayerFactory.newSimpleInstance(context, renderersFactory, trackSelector, drmSessionManager);
         uzVideo.getUzPlayerView().setPlayer(player);
+        uzVideo.getUzPlayerView().setShutterBackgroundColor(Color.TRANSPARENT);
         MediaSource mediaSourceVideo = createMediaSourceVideo();
         //merge title to media source video
         //SUBTITLE
