@@ -3,6 +3,7 @@ package uizacoresdk.view.floatview;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
+import android.util.Log;
 
 import com.google.ads.interactivemedia.v3.api.player.VideoAdPlayer;
 import com.google.ads.interactivemedia.v3.api.player.VideoProgressUpdate;
@@ -306,7 +307,7 @@ public final class FUZPlayerManager implements AdsMediaSource.MediaSourceFactory
     // Internal methods.
     private MediaSource buildMediaSource(Uri uri) {
         @ContentType int type = Util.inferContentType(uri);
-        Log.d("UIZA", type + "===========")
+        Log.d("UIZA", type + "===========");
         switch (type) {
             case C.TYPE_DASH:
                 return new DashMediaSource.Factory(
