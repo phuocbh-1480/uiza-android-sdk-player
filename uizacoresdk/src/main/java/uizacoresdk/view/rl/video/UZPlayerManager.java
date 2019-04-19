@@ -506,7 +506,7 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
         Log.d("UIZA", type + "===========");
         switch (type) {
             case C.TYPE_DASH:
-                DashMediaSource dashMediaSource = new DashMediaSource.Factory(new DefaultDashChunkSource.Factory(mediaDataSourceFactory), manifestDataSourceFactory).createMediaSource(uri);
+                MediaSource dashMediaSource = new DashMediaSource.Factory(new DefaultDashChunkSource.Factory(mediaDataSourceFactory), manifestDataSourceFactory).createMediaSource(uri);
                 dashMediaSource.setMinLoadableRetryCount(10);
                 return dashMediaSource;
             case C.TYPE_SS:
