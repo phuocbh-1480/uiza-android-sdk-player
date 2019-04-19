@@ -503,7 +503,9 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
         @ContentType int type = Util.inferContentType(uri);
         switch (type) {
             case C.TYPE_DASH:
-                return new DashMediaSource.Factory(new DefaultDashChunkSource.Factory(mediaDataSourceFactory), manifestDataSourceFactory).createMediaSource(uri);
+                return new DashMediaSource.Factory(
+                  new DefaultDashChunkSource.Factory(mediaDataSourceFactory),
+                  manifestDataSourceFactory).setMinLoadableRetryCount(10).createMediaSource(uri);
             case C.TYPE_SS:
                 return new SsMediaSource.Factory(new DefaultSsChunkSource.Factory(mediaDataSourceFactory), manifestDataSourceFactory).createMediaSource(uri);
             case C.TYPE_HLS:
