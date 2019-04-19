@@ -347,7 +347,7 @@ public final class UZPlayerManager implements AdsMediaSource.MediaSourceFactory,
 
     private MediaSource createMediaSourceVideo() {
         MediaSource mediaSourceVideo = buildMediaSource(Uri.parse(linkPlay));
-        mediaSourceVideo.setMinLoadableRetryCount(10);
+        // mediaSourceVideo.setMinLoadableRetryCount(10);
         return mediaSourceVideo;
     }
 
